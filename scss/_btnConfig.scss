@@ -1,4 +1,26 @@
-$font-stack: Trebuchet MS, Arial, sans-serif;
-$light-color: #FFC300;
-$primary-color: #000814;
-$secondary-color: #a2d0fc;
+@import "utilities";
+@import "config";
+
+
+%btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+
+  &:hover {
+    transform: scale(.80);
+  }
+}
+
+
+
+.btn-primary {
+  @extend %btn;
+  @include set-bg(lighten($primary-color, 10%));
+}
+
+.btn-secondary {
+  @extend %btn;
+  @include set-bg($secondary-color);
+}
